@@ -246,6 +246,46 @@ function simulateFormSubmission(data) {
 }
 
 // ============================================
+// SMOOTH IMAGE LOADING - FIX LAYOUT SHIFT
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Force all images to load immediately and prevent layout shift
+    const allImages = document.querySelectorAll('img');
+    
+    allImages.forEach(img => {
+        // Remove lazy loading attribute
+        img.removeAttribute('loading');
+        
+        // Set explicit dimensions if not set
+        if (!img.hasAttribute('width') || !img.hasAttribute('height')) {
+            const container = img.closest('.gallery-item, .service-card');
+            if (container) {
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.objectFit = 'cover';
+            }
+        }
+        
+        // Force decode before display
+        if ('decode' in img) {
+            img.decode().catch(() => {
+                // Ignore decode errors
+            });
+        }
+    });
+    
+    // Preload gallery images
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+    galleryImages.forEach(img => {
+        const preloadLink = document.createElement('link');
+        preloadLink.rel = 'preload';
+        preloadLink.as = 'image';
+        preloadLink.href = img.src;
+        document.head.appendChild(preloadLink);
+    });
+});
+
+// ============================================
 // INTERSECTION OBSERVER FOR ANIMATIONS
 // ============================================
 const observerOptions = {
@@ -268,20 +308,9 @@ document.querySelectorAll('.service-card, .gallery-item').forEach(el => {
 });
 
 // ============================================
-// IMAGE LAZY LOADING OPTIMIZATION
+// IMAGE LAZY LOADING OPTIMIZATION - REMOVED
 // ============================================
-if ('loading' in HTMLImageElement.prototype) {
-    // Browser supports native lazy loading
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-        img.src = img.src;
-    });
-} else {
-    // Fallback for older browsers
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-    document.body.appendChild(script);
-}
+// Disabled to prevent layout shift on mobile
 
 // ============================================
 // EMAILJS INTEGRATION (OPTIONAL)

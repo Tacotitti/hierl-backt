@@ -183,60 +183,63 @@ img {
     /* Explicit dimensions prevent layout shift */
     max-width: 100%;
     height: auto;
-    /* Hardware acceleration for smooth rendering */
-    transform: translateZ(0);
-    will-change: auto;
-    /* Smooth image rendering */
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    /* Reserve space immediately */
-    display: block;
+    /* Prevent image decoding jank */
+    image-rendering: auto;
+    /* Force hardware acceleration */
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
 }
 
-/* Ensure aspect ratio is maintained during load */
+/* Gallery container - lock size */
+.gallery-item {
+    position: relative;
+    width: 100%;
+    /* Force aspect ratio container */
+    padding-bottom: 100%; /* 1:1 aspect ratio */
+    overflow: hidden;
+    /* GPU acceleration */
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    will-change: transform;
+    /* Isolate rendering */
+    contain: layout size style paint;
+}
+
+/* Gallery images - absolute positioning prevents shift */
 .gallery-item img {
-    /* Lock dimensions to prevent shift */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Prevent white flash during load */
-    background-color: #FFF8F0;
-    /* Force aspect ratio */
-    aspect-ratio: 1 / 1;
-}
-
-.gallery-item {
-    /* Reserve exact space */
-    min-height: 300px;
+    /* Smooth transition only on hover */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Prevent flickering */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 /* Smooth scroll on mobile */
 body {
     -webkit-overflow-scrolling: touch;
-    /* Prevent scroll jank */
-    overscroll-behavior-y: none;
+    /* Prevent bounce */
+    overscroll-behavior-y: contain;
 }
 
-/* Optimize gallery for mobile scrolling */
-.gallery-item {
-    /* Contain layout and paint */
-    contain: layout paint style;
-    /* Force GPU acceleration */
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-    /* Prevent subpixel rendering issues */
-    -webkit-font-smoothing: antialiased;
-}
-
-/* Prevent image jump on mobile */
-.gallery-item img {
-    /* Smooth transitions only on hover */
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Lock position */
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Disable hover effects on touch devices */
+@media (hover: none) {
+    .gallery-item:hover {
+        transform: none;
+    }
+    
+    .gallery-item img {
+        transition: none;
+    }
+    
+    .group:hover .group-hover\:scale-110 {
+        transform: scale(1) !important;
+    }
 }
 
 /* WhatsApp button (if added later) */
