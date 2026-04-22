@@ -56,13 +56,9 @@ html {
     transition: all 0.3s ease;
 }
 
-/* Gallery item transitions */
+/* Gallery item transitions - DISABLED */
 .gallery-item {
-    transition: all 0.3s ease;
-}
-
-.gallery-item:hover {
-    transform: scale(1.02);
+    /* No transitions or effects */
 }
 
 /* Form focus effects */
@@ -178,68 +174,31 @@ textarea:focus {
     color: #5C4D42;
 }
 
-/* Prevent layout shift and smooth image loading */
+/* Static images - no animations or transforms */
 img {
-    /* Explicit dimensions prevent layout shift */
+    display: block;
     max-width: 100%;
     height: auto;
-    /* Prevent image decoding jank */
-    image-rendering: auto;
-    /* Force hardware acceleration */
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
 }
 
-/* Gallery container - lock size */
+/* Gallery items - simple static containers */
 .gallery-item {
     position: relative;
     width: 100%;
-    /* Force aspect ratio container */
-    padding-bottom: 100%; /* 1:1 aspect ratio */
-    overflow: hidden;
-    /* GPU acceleration */
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-    will-change: transform;
-    /* Isolate rendering */
-    contain: layout size style paint;
 }
 
-/* Gallery images - absolute positioning prevents shift */
+/* Gallery images - static, no effects */
 .gallery-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Smooth transition only on hover */
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Prevent flickering */
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    display: block;
 }
 
 /* Smooth scroll on mobile */
 body {
     -webkit-overflow-scrolling: touch;
-    /* Prevent bounce */
     overscroll-behavior-y: contain;
-}
-
-/* Disable hover effects on touch devices */
-@media (hover: none) {
-    .gallery-item:hover {
-        transform: none;
-    }
-    
-    .gallery-item img {
-        transition: none;
-    }
-    
-    .group:hover .group-hover\:scale-110 {
-        transform: scale(1) !important;
-    }
 }
 
 /* WhatsApp button (if added later) */

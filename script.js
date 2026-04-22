@@ -246,46 +246,6 @@ function simulateFormSubmission(data) {
 }
 
 // ============================================
-// SMOOTH IMAGE LOADING - FIX LAYOUT SHIFT
-// ============================================
-document.addEventListener('DOMContentLoaded', () => {
-    // Force all images to load immediately and prevent layout shift
-    const allImages = document.querySelectorAll('img');
-    
-    allImages.forEach(img => {
-        // Remove lazy loading attribute
-        img.removeAttribute('loading');
-        
-        // Set explicit dimensions if not set
-        if (!img.hasAttribute('width') || !img.hasAttribute('height')) {
-            const container = img.closest('.gallery-item, .service-card');
-            if (container) {
-                img.style.width = '100%';
-                img.style.height = '100%';
-                img.style.objectFit = 'cover';
-            }
-        }
-        
-        // Force decode before display
-        if ('decode' in img) {
-            img.decode().catch(() => {
-                // Ignore decode errors
-            });
-        }
-    });
-    
-    // Preload gallery images
-    const galleryImages = document.querySelectorAll('.gallery-item img');
-    galleryImages.forEach(img => {
-        const preloadLink = document.createElement('link');
-        preloadLink.rel = 'preload';
-        preloadLink.as = 'image';
-        preloadLink.href = img.src;
-        document.head.appendChild(preloadLink);
-    });
-});
-
-// ============================================
 // INTERSECTION OBSERVER FOR ANIMATIONS
 // ============================================
 const observerOptions = {
@@ -302,15 +262,10 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe service cards, gallery items, etc.
-document.querySelectorAll('.service-card, .gallery-item').forEach(el => {
+// Observe service cards only (not gallery items)
+document.querySelectorAll('.service-card').forEach(el => {
     observer.observe(el);
 });
-
-// ============================================
-// IMAGE LAZY LOADING OPTIMIZATION - REMOVED
-// ============================================
-// Disabled to prevent layout shift on mobile
 
 // ============================================
 // EMAILJS INTEGRATION (OPTIONAL)
