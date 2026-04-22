@@ -178,13 +178,53 @@ textarea:focus {
     color: #5C4D42;
 }
 
-/* Image lazy loading blur-up effect */
-img[loading="lazy"] {
-    transition: filter 0.3s ease;
+/* Prevent layout shift and smooth image loading */
+img {
+    /* Prevent layout shift during image load */
+    content-visibility: auto;
+    /* Hardware acceleration for smooth rendering */
+    transform: translateZ(0);
+    will-change: auto;
+    /* Smooth image rendering */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
-img[loading="lazy"]:not([src]) {
-    filter: blur(10px);
+/* Ensure aspect ratio is maintained during load */
+.gallery-item img,
+.service-card img,
+section img {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* Prevent white flash during load */
+    background-color: #FFF8F0;
+}
+
+/* Smooth scroll on mobile */
+body {
+    -webkit-overflow-scrolling: touch;
+    /* Prevent scroll jank */
+    overscroll-behavior-y: none;
+}
+
+/* Optimize gallery for mobile scrolling */
+.gallery-item {
+    /* Contain layout and paint */
+    contain: layout paint;
+    /* Force GPU acceleration */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Prevent image jump on mobile */
+.gallery-item img {
+    /* Lock aspect ratio */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    /* Smooth transitions */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* WhatsApp button (if added later) */
