@@ -319,7 +319,7 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Gallery Section - OPTIMIZED FOR MOBILE -->
     <section id="gallery" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -332,50 +332,39 @@
                 </p>
             </div>
             
-            <!-- Gallery Grid - Inverted Pyramid: 1 top, 3 bottom -->
-            <div class="space-y-8">
-                <!-- Row 1: 1 image centered -->
-                <div class="max-w-md mx-auto">
-                    <div class="gallery-item overflow-hidden rounded-2xl shadow-lg" style="aspect-ratio: 1/1;">
+            <!-- Gallery Grid - Fixed heights for stable layout -->
+            <div class="gallery-grid">
+                <!-- Row 1: 1 large image -->
+                <div class="gallery-row-1">
+                    <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" 
                              alt="Köstlicher Kuchen" 
                              width="600"
-                             height="600"
-                             style="width: 100%; height: 100%; object-fit: cover; display: block;"
-                             decoding="async">
+                             height="441">
                     </div>
                 </div>
                 
                 <!-- Row 2: 3 images -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <!-- Gallery Item 2 -->
-                    <div class="gallery-item overflow-hidden rounded-2xl shadow-lg" style="aspect-ratio: 1/1;">
+                <div class="gallery-row-2">
+                    <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&q=80" 
                              alt="Elegantes Tiramisu" 
                              width="600"
-                             height="600"
-                             style="width: 100%; height: 100%; object-fit: cover; display: block;"
-                             decoding="async">
+                             height="692">
                     </div>
                     
-                    <!-- Gallery Item 3 -->
-                    <div class="gallery-item overflow-hidden rounded-2xl shadow-lg" style="aspect-ratio: 1/1;">
+                    <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" 
                              alt="Dessert Buffet" 
                              width="600"
-                             height="600"
-                             style="width: 100%; height: 100%; object-fit: cover; display: block;"
-                             decoding="async">
+                             height="1067">
                     </div>
                     
-                    <!-- Gallery Item 4 -->
-                    <div class="gallery-item overflow-hidden rounded-2xl shadow-lg" style="aspect-ratio: 1/1;">
+                    <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" 
                              alt="Frische Kuchen" 
                              width="600"
-                             height="600"
-                             style="width: 100%; height: 100%; object-fit: cover; display: block;"
-                             decoding="async">
+                             height="750">
                     </div>
                 </div>
             </div>

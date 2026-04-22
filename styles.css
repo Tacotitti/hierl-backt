@@ -56,9 +56,106 @@ html {
     transition: all 0.3s ease;
 }
 
-/* Gallery item transitions - DISABLED */
+/* ==============================================
+   GALLERY - MOBILE OPTIMIZED (NO JUMPING!)
+   ============================================== */
+
+.gallery-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Row 1: Single centered image */
+.gallery-row-1 {
+    max-width: 28rem; /* 448px ~ max-w-md */
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Row 2: Three images grid */
+.gallery-row-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 80rem; /* ~max-w-5xl */
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .gallery-row-2 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Gallery Item - Fixed container with reserved space */
 .gallery-item {
-    /* No transitions or effects */
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    background-color: #f3f4f6; /* Light gray placeholder background */
+}
+
+/* Critical: Reserve exact space BEFORE image loads */
+.gallery-item::before {
+    content: '';
+    display: block;
+    /* Default to square for mobile, will be overridden */
+    padding-top: 100%; 
+}
+
+/* Mobile: All images square */
+.gallery-row-1 .gallery-item::before {
+    padding-top: 100%; /* 1:1 square */
+}
+
+.gallery-row-2 .gallery-item::before {
+    padding-top: 100%; /* 1:1 square on mobile */
+}
+
+/* Desktop: Use actual aspect ratios */
+@media (min-width: 768px) {
+    /* First image: 600x441 = 73.5% */
+    .gallery-row-1 .gallery-item::before {
+        padding-top: 73.5%;
+    }
+    
+    /* Second image: 600x692 = 115.33% */
+    .gallery-row-2 .gallery-item:nth-child(1)::before {
+        padding-top: 115.33%;
+    }
+    
+    /* Third image: 600x1067 = 177.83% */
+    .gallery-row-2 .gallery-item:nth-child(2)::before {
+        padding-top: 177.83%;
+    }
+    
+    /* Fourth image: 600x750 = 125% */
+    .gallery-row-2 .gallery-item:nth-child(3)::before {
+        padding-top: 125%;
+    }
+}
+
+/* Image positioning - absolute to fill reserved space */
+.gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* No transitions or hover effects on mobile */
+@media (max-width: 767px) {
+    .gallery-item {
+        transform: none !important;
+        transition: none !important;
+    }
 }
 
 /* Form focus effects */
@@ -174,31 +271,15 @@ textarea:focus {
     color: #5C4D42;
 }
 
-/* Static images - no animations or transforms */
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-/* Gallery items - simple static containers */
-.gallery-item {
-    position: relative;
-    width: 100%;
-}
-
-/* Gallery images - static, no effects */
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Smooth scroll on mobile */
+/* Optimize scrolling on mobile */
 body {
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: contain;
+}
+
+/* Prevent layout shift during font loading */
+body {
+    font-display: swap;
 }
 
 /* WhatsApp button (if added later) */
