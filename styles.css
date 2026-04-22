@@ -1,0 +1,212 @@
+/* Custom Styles for Hierl backt */
+
+/* Custom Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+    opacity: 0;
+    animation: fade-in 1s ease-out 0.3s forwards;
+}
+
+.animate-fade-in-delay-2 {
+    opacity: 0;
+    animation: fade-in 1s ease-out 0.6s forwards;
+}
+
+.animate-fade-in-delay-3 {
+    opacity: 0;
+    animation: fade-in 1s ease-out 0.9s forwards;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar shadow on scroll */
+#navbar.scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Stat cards hover effect */
+.stat-card {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Service card animations */
+.service-card {
+    transition: all 0.3s ease;
+}
+
+/* Gallery item transitions */
+.gallery-item {
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+/* Form focus effects */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+/* Error shake animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.shake {
+    animation: shake 0.4s ease;
+}
+
+/* Scroll to top button */
+#scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile menu animation */
+#mobile-menu {
+    transition: all 0.3s ease;
+}
+
+/* Loading spinner for form submission */
+.spinner {
+    border: 3px solid rgba(139, 111, 92, 0.1);
+    border-top: 3px solid #8B6F5C;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Success/Error message styles */
+.success-message {
+    background-color: #D1FAE5;
+    border: 2px solid #10B981;
+    color: #065F46;
+}
+
+.error-message-box {
+    background-color: #FEE2E2;
+    border: 2px solid #EF4444;
+    color: #991B1B;
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+    .stat-card {
+        padding: 1rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    nav, footer, #scroll-top {
+        display: none;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* Accessibility: Focus visible */
+*:focus-visible {
+    outline: 2px solid #8B6F5C;
+    outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Custom selection color */
+::selection {
+    background-color: #FFD7C4;
+    color: #5C4D42;
+}
+
+::-moz-selection {
+    background-color: #FFD7C4;
+    color: #5C4D42;
+}
+
+/* Image lazy loading blur-up effect */
+img[loading="lazy"] {
+    transition: filter 0.3s ease;
+}
+
+img[loading="lazy"]:not([src]) {
+    filter: blur(10px);
+}
+
+/* WhatsApp button (if added later) */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}

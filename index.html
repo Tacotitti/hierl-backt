@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Hierl backt - Dessert Catering für besondere Momente | Stuttgart</title>
+    <meta name="description" content="Professionelles Dessert Catering für Hochzeiten, Firmenevents und private Feiern. Mit Wasen-Erfahrung und Leidenschaft für süße Köstlichkeiten.">
+    <meta name="keywords" content="Dessert Catering, Hochzeit, Firmenfeier, Stuttgart, Wasen, Kuchen, Tiramisu, Event Catering">
+    <meta name="author" content="Hierl backt">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hierl backt - Dessert Catering für besondere Momente">
+    <meta property="og:description" content="Wir sind ein junges, engagiertes Team mit einer großen Leidenschaft für Desserts. Perfekt für Hochzeiten, Firmenevents und private Feiern.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=1200&h=630&fit=crop">
+    <meta property="og:url" content="https://hierlbackt.de">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'cream': '#FFF8F0',
+                        'peach': '#FFE5D9',
+                        'rose': '#FFD7C4',
+                        'brown': '#8B6F5C',
+                        'dark-brown': '#5C4D42',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body text-gray-800 bg-cream">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#hero" class="font-display text-3xl font-bold text-brown">
+                        Hierl backt
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-gray-700 hover:text-brown transition-colors">Über uns</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-brown transition-colors">Leistungen</a>
+                    <a href="#gallery" class="nav-link text-gray-700 hover:text-brown transition-colors">Galerie</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-brown transition-colors">Kontakt</a>
+                </div>
+                
+                <!-- Social Links (Desktop) -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://instagram.com/hierlbackt" target="_blank" class="text-gray-600 hover:text-brown transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="mailto:luisa.hierl@gmx.de" class="text-gray-600 hover:text-brown transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#about" class="mobile-nav-link block py-2 text-gray-700 hover:text-brown transition-colors">Über uns</a>
+                <a href="#services" class="mobile-nav-link block py-2 text-gray-700 hover:text-brown transition-colors">Leistungen</a>
+                <a href="#gallery" class="mobile-nav-link block py-2 text-gray-700 hover:text-brown transition-colors">Galerie</a>
+                <a href="#contact" class="mobile-nav-link block py-2 text-gray-700 hover:text-brown transition-colors">Kontakt</a>
+                <div class="flex space-x-4 pt-2">
+                    <a href="https://instagram.com/hierlbackt" target="_blank" class="text-gray-600 hover:text-brown">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="mailto:luisa.hierl@gmx.de" class="text-gray-600 hover:text-brown">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=1600&q=80" 
+                 alt="Köstliche Desserts" 
+                 class="w-full h-full object-cover opacity-30"
+                 loading="eager">
+            <div class="absolute inset-0 bg-gradient-to-b from-peach/50 to-cream/90"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+            <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-brown mb-6 animate-fade-in">
+                Hierl backt
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-700 mb-4 animate-fade-in-delay">
+                Dessert Catering für besondere Momente
+            </p>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto animate-fade-in-delay-2">
+                Wir kreieren süße Köstlichkeiten für Hochzeiten, Firmenevents und private Feiern – 
+                mit Leidenschaft, Erfahrung und viel Liebe zum Detail.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-3">
+                <a href="#contact" class="bg-brown text-white px-8 py-4 rounded-full font-medium hover:bg-dark-brown transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Jetzt anfragen
+                </a>
+                <a href="#gallery" class="bg-white text-brown px-8 py-4 rounded-full font-medium hover:bg-gray-50 transition-all duration-300 border-2 border-brown">
+                    Galerie ansehen
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 gap-6 sm:gap-12 mt-16 max-w-xl mx-auto">
+                <div class="stat-card bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-md">
+                    <div class="text-3xl sm:text-4xl font-display font-bold text-brown">50+</div>
+                    <div class="text-sm sm:text-base text-gray-600 mt-1">Zufriedene Kunden</div>
+                </div>
+                <div class="stat-card bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-md">
+                    <div class="text-3xl sm:text-4xl font-display font-bold text-brown">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="text-sm sm:text-base text-gray-600 mt-1">Wasen-Erfahrung</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-brown">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl sm:text-5xl font-bold text-brown mb-4">
+                    Wer wir sind
+                </h2>
+                <div class="w-24 h-1 bg-rose mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80" 
+                         alt="Team beim Backen" 
+                         class="rounded-2xl shadow-2xl w-full"
+                         loading="lazy">
+                    <div class="absolute -bottom-6 -right-6 bg-rose p-6 rounded-2xl shadow-lg hidden sm:block">
+                        <i class="fas fa-heart text-4xl text-brown"></i>
+                    </div>
+                </div>
+                
+                <!-- Text -->
+                <div class="space-y-6 text-gray-700 leading-relaxed">
+                    <p class="text-lg">
+                        Wir sind ein <strong class="text-brown">junges, engagiertes Team</strong> mit einer großen Leidenschaft für Desserts. 
+                        Was uns antreibt? Die Freude daran, Menschen mit süßen Köstlichkeiten zu begeistern und besondere Momente noch unvergesslicher zu machen.
+                    </p>
+                    
+                    <p>
+                        Ob Hochzeit, Firmenfeier oder privates Event – wir kümmern uns um das perfekte Dessertkonzept, 
+                        damit du dich entspannt zurücklehnen kannst. Mit viel Liebe zum Detail und kreativen Ideen sorgen wir dafür, 
+                        dass für jeden Geschmack etwas dabei ist.
+                    </p>
+                    
+                    <p>
+                        Durch unsere Erfahrungen im Verkauf – unter anderem auf dem <strong class="text-brown">Wasen</strong> – 
+                        wissen wir genau, worauf es ankommt: <em>Qualität, Geschmack und ein reibungsloser Ablauf</em>. 
+                        Dieses Know-How setzen wir gezielt ein, um deine Veranstaltung kulinarisch abzurunden.
+                    </p>
+                    
+                    <div class="bg-peach p-6 rounded-xl border-l-4 border-brown">
+                        <p class="font-display text-xl text-brown italic">
+                            "Du feierst – wir kümmern uns um den süßen Abschluss."
+                        </p>
+                    </div>
+                    
+                    <p>
+                        <strong>Unser Service:</strong> Ob Kuchen oder cremiges Tiramisu – gemeinsam stimmen wir alles individuell 
+                        auf deine Veranstaltung ab, damit am Ende genau das auf dem Tisch steht, was perfekt zu dir und deinem Anlass passt.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-b from-cream to-peach">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl sm:text-5xl font-bold text-brown mb-4">
+                    Unsere Leistungen
+                </h2>
+                <div class="w-24 h-1 bg-rose mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Von klassischen Kuchen bis zu raffinierten Dessert-Kreationen – 
+                    wir gestalten das perfekte süße Erlebnis für deinen Anlass.
+                </p>
+            </div>
+            
+            <!-- Services Grid - Inverted Pyramid: 2 top, 3 bottom -->
+            <div class="space-y-8">
+                <!-- Row 1: 2 cards centered -->
+                <div class="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                    <!-- Service Card 1 -->
+                    <div class="service-card bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-rose rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-briefcase text-3xl text-brown"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-brown mb-4 text-center">Firmenevents</h3>
+                        <p class="text-gray-600 text-center leading-relaxed">
+                            Professionelles Catering für Meetings, Konferenzen und Firmenveranstaltungen jeder Größe.
+                        </p>
+                    </div>
+                    
+                    <!-- Service Card 2 -->
+                    <div class="service-card bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-rose rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-users text-3xl text-brown"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-brown mb-4 text-center">Private Feiern</h3>
+                        <p class="text-gray-600 text-center leading-relaxed">
+                            Geburtstage, Jubiläen, Gartenpartys – wir versüßen jeden besonderen Moment.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Row 2: 3 cards -->
+                <div class="grid sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Service Card 3 -->
+                    <div class="service-card bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-rose rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-cake-candles text-3xl text-brown"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-brown mb-4 text-center">Kuchen-Vielfalt</h3>
+                        <p class="text-gray-600 text-center leading-relaxed">
+                            Von klassisch bis modern – individuell gebackene Kuchen nach deinen Wünschen.
+                        </p>
+                    </div>
+                    
+                    <!-- Service Card 4 -->
+                    <div class="service-card bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-rose rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-ice-cream text-3xl text-brown"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-brown mb-4 text-center">Tiramisu & Mehr</h3>
+                        <p class="text-gray-600 text-center leading-relaxed">
+                            Cremige Desserts in verschiedenen Variationen – perfekt portioniert für deine Gäste.
+                        </p>
+                    </div>
+                    
+                    <!-- Service Card 5 -->
+                    <div class="service-card bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-rose rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fas fa-wand-magic-sparkles text-3xl text-brown"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-brown mb-4 text-center">Individuelle Konzepte</h3>
+                        <p class="text-gray-600 text-center leading-relaxed">
+                            Deine Vision, unsere Kreativität – wir entwickeln maßgeschneiderte Dessert-Lösungen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pricing Info -->
+            <div class="mt-16 text-center">
+                <div class="inline-block bg-white p-8 rounded-2xl shadow-lg">
+                    <i class="fas fa-tag text-4xl text-brown mb-4"></i>
+                    <h3 class="font-display text-2xl font-bold text-brown mb-2">Preise auf Anfrage</h3>
+                    <p class="text-gray-600 mb-4">
+                        Jedes Event ist einzigartig – daher erstellen wir dir ein individuelles Angebot.
+                    </p>
+                    <a href="#contact" class="inline-block bg-brown text-white px-6 py-3 rounded-full font-medium hover:bg-dark-brown transition-colors">
+                        Angebot anfragen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl sm:text-5xl font-bold text-brown mb-4">
+                    Galerie
+                </h2>
+                <div class="w-24 h-1 bg-rose mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Lass dich von unseren süßen Kreationen inspirieren
+                </p>
+            </div>
+            
+            <!-- Gallery Grid - Inverted Pyramid: 1 top, 3 bottom -->
+            <div class="space-y-8">
+                <!-- Row 1: 1 image centered -->
+                <div class="max-w-md mx-auto">
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" 
+                             alt="Köstlicher Kuchen" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <p class="text-white font-display text-xl p-6">Hausgemachte Torten</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Row 2: 3 images -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Gallery Item 2 -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&q=80" 
+                             alt="Elegantes Tiramisu" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <p class="text-white font-display text-xl p-6">Cremiges Tiramisu</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 3 -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" 
+                             alt="Dessert Buffet" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <p class="text-white font-display text-xl p-6">Dessert-Buffets</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Item 4 -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" 
+                             alt="Frische Kuchen" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <p class="text-white font-display text-xl p-6">Frisch & Lecker</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-peach to-cream">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl sm:text-5xl font-bold text-brown mb-4">
+                    Kontakt
+                </h2>
+                <div class="w-24 h-1 bg-rose mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Lass uns gemeinsam dein perfektes Dessert-Erlebnis planen. 
+                    Wir freuen uns auf deine Anfrage!
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+                <form id="contact-form" class="space-y-6">
+                    <!-- Name -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                            Name <span class="text-red-500">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition-all"
+                            placeholder="Dein vollständiger Name"
+                        >
+                        <p class="error-message text-red-500 text-sm mt-1 hidden"></p>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                            E-Mail <span class="text-red-500">*</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition-all"
+                            placeholder="deine@email.de"
+                        >
+                        <p class="error-message text-red-500 text-sm mt-1 hidden"></p>
+                    </div>
+                    
+                    <!-- Telefon -->
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                            Telefon
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition-all"
+                            placeholder="+49 123 456789"
+                        >
+                    </div>
+                    
+                    <!-- Event Type & Date -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="event-type" class="block text-sm font-medium text-gray-700 mb-2">
+                                Event-Typ
+                            </label>
+                            <select 
+                                id="event-type" 
+                                name="event-type"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition-all"
+                            >
+                                <option value="">Bitte wählen...</option>
+                                <option value="hochzeit">Hochzeit</option>
+                                <option value="firmenfeier">Firmenfeier</option>
+                                <option value="privat">Private Feier</option>
+                                <option value="sonstiges">Sonstiges</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="date" class="block text-sm font-medium text-gray-700 mb-2">
+                                Datum
+                            </label>
+                            <input 
+                                type="date" 
+                                id="date" 
+                                name="date"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition-all"
+                            >
+                        </div>
+                    </div>
+                    
+                    <!-- Anzahl Gäste -->
+                    <div>
+                        <label for="guests" class="block text-sm font-medium text-gray-700 mb-2">
+                            Anzahl Gäste
+                        </label>
+                        <input 
+                            type="number" 
+                            id="guests" 
+                            name="guests"
+                            min="1"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition-all"
+                            placeholder="Ungefähre Anzahl"
+                        >
+                    </div>
+                    
+                    <!-- Nachricht -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                            Nachricht
+                        </label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="5"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brown focus:border-transparent transition-all resize-none"
+                            placeholder="Teile uns deine Wünsche und Vorstellungen mit..."
+                        ></textarea>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button 
+                            type="submit"
+                            class="bg-brown text-white px-12 py-4 rounded-full font-medium text-lg hover:bg-dark-brown transition-all duration-300 transform hover:scale-105 shadow-lg"
+                        >
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Anfrage senden
+                        </button>
+                    </div>
+                    
+                    <!-- Success/Error Messages -->
+                    <div id="form-message" class="hidden mt-4 p-4 rounded-lg"></div>
+                </form>
+                
+                <!-- Contact Info -->
+                <div class="mt-12 pt-8 border-t border-gray-200">
+                    <div class="grid sm:grid-cols-2 gap-6 text-center">
+                        <div>
+                            <i class="fas fa-envelope text-3xl text-brown mb-3"></i>
+                            <h3 class="font-display text-lg font-bold text-brown mb-2">E-Mail</h3>
+                            <a href="mailto:luisa.hierl@gmx.de" class="text-gray-600 hover:text-brown transition-colors block">
+                                luisa.hierl@gmx.de
+                            </a>
+                            <a href="mailto:info@hierl-grillt.de" class="text-gray-500 text-sm hover:text-brown transition-colors block mt-1">
+                                info@hierl-grillt.de
+                            </a>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone text-3xl text-brown mb-3"></i>
+                            <h3 class="font-display text-lg font-bold text-brown mb-2">Telefon</h3>
+                            <a href="tel:+4984669042970" class="text-gray-600 hover:text-brown transition-colors">
+                                08466 904297
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-center mt-6">
+                        <i class="fab fa-instagram text-3xl text-brown mb-3"></i>
+                        <h3 class="font-display text-lg font-bold text-brown mb-2">Instagram</h3>
+                        <a href="https://instagram.com/hierlbackt" target="_blank" class="text-gray-600 hover:text-brown transition-colors">
+                            @hierlbackt
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-brown text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <h3 class="font-display text-2xl font-bold mb-4">Hierl backt</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Dein Partner für unvergessliche Dessert-Erlebnisse bei Hochzeiten, Firmenevents und privaten Feiern.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-peach transition-colors">Über uns</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-peach transition-colors">Leistungen</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-peach transition-colors">Galerie</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-peach transition-colors">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal -->
+                <div>
+                    <h4 class="font-display text-lg font-bold mb-4">Rechtliches</h4>
+                    <ul class="space-y-2">
+                        <li><a href="impressum.html" class="text-gray-300 hover:text-peach transition-colors">Impressum</a></li>
+                        <li><a href="datenschutz.html" class="text-gray-300 hover:text-peach transition-colors">Datenschutzerklärung</a></li>
+                    </ul>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://instagram.com/hierlbackt" target="_blank" class="text-gray-300 hover:text-peach transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="mailto:luisa.hierl@gmx.de" class="text-gray-300 hover:text-peach transition-colors">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-600 pt-8 text-center text-gray-300">
+                <p>&copy; 2026 Hierl backt. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 bg-brown text-white p-4 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-dark-brown z-40">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
