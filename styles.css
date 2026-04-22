@@ -180,25 +180,34 @@ textarea:focus {
 
 /* Prevent layout shift and smooth image loading */
 img {
-    /* Prevent layout shift during image load */
-    content-visibility: auto;
+    /* Explicit dimensions prevent layout shift */
+    max-width: 100%;
+    height: auto;
     /* Hardware acceleration for smooth rendering */
     transform: translateZ(0);
     will-change: auto;
     /* Smooth image rendering */
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+    /* Reserve space immediately */
+    display: block;
 }
 
 /* Ensure aspect ratio is maintained during load */
-.gallery-item img,
-.service-card img,
-section img {
-    display: block;
+.gallery-item img {
+    /* Lock dimensions to prevent shift */
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     /* Prevent white flash during load */
     background-color: #FFF8F0;
+    /* Force aspect ratio */
+    aspect-ratio: 1 / 1;
+}
+
+.gallery-item {
+    /* Reserve exact space */
+    min-height: 300px;
 }
 
 /* Smooth scroll on mobile */
@@ -211,20 +220,23 @@ body {
 /* Optimize gallery for mobile scrolling */
 .gallery-item {
     /* Contain layout and paint */
-    contain: layout paint;
+    contain: layout paint style;
     /* Force GPU acceleration */
-    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
+    /* Prevent subpixel rendering issues */
+    -webkit-font-smoothing: antialiased;
 }
 
 /* Prevent image jump on mobile */
 .gallery-item img {
-    /* Lock aspect ratio */
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    /* Smooth transitions */
+    /* Smooth transitions only on hover */
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Lock position */
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* WhatsApp button (if added later) */
