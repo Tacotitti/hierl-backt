@@ -391,7 +391,12 @@
             </div>
             
             <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
-                <form id="contact-form" class="space-y-6">
+                <form id="contact-form" action="https://formsubmit.co/info@hierlbackt.de" method="POST" class="space-y-6">
+                    <!-- FormSubmit.co Config -->
+                    <input type="hidden" name="_subject" value="Neue Anfrage – Hierl backt">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://hierlbackt.de">
                     <!-- Name -->
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-700 mb-2">

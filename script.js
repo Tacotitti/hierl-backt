@@ -93,11 +93,26 @@ scrollTopBtn.addEventListener('click', () => {
 // ============================================
 // FORM VALIDATION & SUBMISSION
 // ============================================
+// Contact Form - Native FormSubmit.co (no JS needed, form handles it)
+// JS below only for client-side validation before submit
 const contactForm = document.getElementById('contact-form');
 const formMessage = document.getElementById('form-message');
 
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+contactForm.addEventListener('submit', (e) => {
+    // Get form data
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData);
+    
+    // Validate required fields
+    const errors = validateForm(data);
+    
+    if (errors.length > 0) {
+        e.preventDefault();
+        showFormErrors(errors);
+        return;
+    }
+    // If valid, form submits naturally to FormSubmit.co -> info@hierlbackt.de
+});
     
     // Clear previous messages
     formMessage.classList.add('hidden');
