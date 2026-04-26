@@ -121,11 +121,29 @@ contactForm.addEventListener('submit', async (e) => {
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span class="spinner"></span>Wird gesendet...';
     
-    // Simulate form submission (replace with actual EmailJS or Formspree integration)
+    // Send via Formspree to info@hierlbackt.de
+    // FORMSPREE_FORM_ID wird unten gesetzt
+    const FORMSPREE_ENDPOINT = window.FORMSPREE_ENDPOINT || 'https://formspree.io/f/DEINE_FORM_ID';
     try {
-        // TODO: Integrate with EmailJS or Formspree
-        // For now, simulate a successful submission
-        await simulateFormSubmission(data);
+        const response = await fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+                name: data.name,
+                email: data.email,
+                phone: data.phone || '',
+                eventType: data['event-type'] || '',
+                date: data.date || '',
+                guests: data.guests || '',
+                message: data.message,
+                _replyto: data.email,
+                _subject: `Neue Anfrage von ${data.name} – Hierl backt`
+            })
+        });
+
+        if (!response.ok) throw new Error('Formspree error');
+        const result = await response.json();
+        if (result.errors) throw new Error(result.errors.map(e => e.message).join(', '));
         
         // Show success message
         formMessage.innerHTML = `

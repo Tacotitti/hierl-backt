@@ -3,11 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     
     <!-- SEO Meta Tags -->
     <title>Hierl backt - Dessert Catering für besondere Momente | Stuttgart</title>
@@ -324,7 +319,7 @@
         </div>
     </section>
 
-    <!-- Gallery Section - OPTIMIZED FOR MOBILE -->
+    <!-- Gallery Section - FIXED VERSION -->
     <section id="gallery" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -337,39 +332,58 @@
                 </p>
             </div>
             
-            <!-- Gallery Grid - Fixed heights for stable layout -->
-            <div class="gallery-grid">
-                <!-- Row 1: 1 large image -->
-                <div class="gallery-row-1">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" 
-                             alt="Köstlicher Kuchen" 
-                             width="600"
-                             height="441">
+            <!-- Gallery Grid - FIXED with proper aspect ratios and placeholders -->
+            <div class="space-y-8">
+                <!-- Row 1: 1 image centered - 600x441 = ~1.36:1 -->
+                <div class="max-w-md mx-auto">
+                    <div class="gallery-item-wrapper" style="position: relative; width: 100%; padding-bottom: 73.5%; overflow: hidden; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+                        <img 
+                            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" 
+                            alt="Köstlicher Kuchen" 
+                            width="600"
+                            height="441"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                            loading="eager"
+                            decoding="async">
                     </div>
                 </div>
                 
                 <!-- Row 2: 3 images -->
-                <div class="gallery-row-2">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&q=80" 
-                             alt="Elegantes Tiramisu" 
-                             width="600"
-                             height="692">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Gallery Item 2 - 600x692 = ~0.87:1 -->
+                    <div class="gallery-item-wrapper" style="position: relative; width: 100%; padding-bottom: 115.3%; overflow: hidden; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+                        <img 
+                            src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&q=80" 
+                            alt="Elegantes Tiramisu" 
+                            width="600"
+                            height="692"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                            loading="eager"
+                            decoding="async">
                     </div>
                     
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" 
-                             alt="Dessert Buffet" 
-                             width="600"
-                             height="1067">
+                    <!-- Gallery Item 3 - 600x1067 = ~0.56:1 -->
+                    <div class="gallery-item-wrapper" style="position: relative; width: 100%; padding-bottom: 177.8%; overflow: hidden; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+                        <img 
+                            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" 
+                            alt="Dessert Buffet" 
+                            width="600"
+                            height="1067"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                            loading="eager"
+                            decoding="async">
                     </div>
                     
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" 
-                             alt="Frische Kuchen" 
-                             width="600"
-                             height="750">
+                    <!-- Gallery Item 4 - 600x750 = ~0.8:1 -->
+                    <div class="gallery-item-wrapper" style="position: relative; width: 100%; padding-bottom: 125%; overflow: hidden; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+                        <img 
+                            src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" 
+                            alt="Frische Kuchen" 
+                            width="600"
+                            height="750"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                            loading="eager"
+                            decoding="async">
                     </div>
                 </div>
             </div>
@@ -601,10 +615,6 @@
     </button>
 
     <!-- JavaScript -->
-    <script>
-    // Formspree Endpoint - nach Registrierung hier eintragen
-    window.FORMSPREE_ENDPOINT = 'https://formspree.io/f/DEINE_FORM_ID';
-</script>
     <script src="script.js"></script>
 </body>
 </html>
