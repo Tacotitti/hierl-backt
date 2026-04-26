@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background: warm cream -->
+  <rect width="512" height="512" rx="80" fill="#FFF8F2"/>
+  
+  <!-- "H" lettermark in Playfair Display style, brown -->
+  <!-- Left vertical stroke -->
+  <rect x="100" y="110" width="52" height="292" rx="8" fill="#8B6F5C"/>
+  <!-- Right vertical stroke -->
+  <rect x="360" y="110" width="52" height="292" rx="8" fill="#8B6F5C"/>
+  <!-- Horizontal crossbar -->
+  <rect x="100" y="232" width="312" height="48" rx="6" fill="#8B6F5C"/>
+  
+  <!-- Small decorative dot (like a serif flour dusting) -->
+  <circle cx="256" cy="440" r="12" fill="#D4A574" opacity="0.7"/>
+</svg>
